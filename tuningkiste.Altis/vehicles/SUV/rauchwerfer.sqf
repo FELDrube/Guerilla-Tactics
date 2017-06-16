@@ -1,0 +1,34 @@
+	_SUV = _this select 0;
+	_id = _this select 2;
+	
+	_smoke1= "SmokeShell" createVehicle getPos _SUV;
+	_smoke1 attachto [_SUV,[0,20,30]];
+	detach _smoke1;
+	_smoke2= "SmokeShell" createVehicle getPos _SUV;
+	_smoke2 attachto [_SUV,[5,20,30]];
+	detach _smoke2;
+	_smoke3= "SmokeShell" createVehicle getPos _SUV;
+	_smoke3 attachto [_SUV,[-5,17,30]];
+	detach _smoke3;
+	_smoke4= "SmokeShell" createVehicle getPos _SUV;
+	_smoke4 attachto [_SUV,[8,15,30]];
+	detach _smoke4;
+	_smoke5= "SmokeShell" createVehicle getPos _SUV;
+	_smoke5 attachto [_SUV,[-8,15,30]];
+	detach _smoke5;
+
+	_smoke8= "SmokeShell" createVehicle getPos _SUV;
+	_smoke8 attachto [_SUV,[10.5,12,30]];
+	detach _smoke8;
+	_smoke9= "SmokeShell" createVehicle getPos _SUV;
+	_smoke9 attachto [_SUV,[-10.5,12,30]];
+	detach _smoke9;
+	_smoke10= "SmokeShell" createVehicle getPos _SUV;
+	_smoke10 attachto [_SUV,[4,20,30]];
+	detach _smoke10;
+	_smoke11= "SmokeShell" createVehicle getPos _SUV;
+	_smoke11 attachto [_SUV,[-4,20,30]];
+	detach _smoke11;
+	_SUV removeAction _id;
+	sleep 20;
+	_SUV addAction ["Launch smoke","vehicles\SUV\rauchwerfer.sqf"];

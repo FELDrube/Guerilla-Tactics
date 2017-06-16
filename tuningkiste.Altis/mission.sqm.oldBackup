@@ -1,0 +1,328 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"A3_Characters_F_INDEP",
+		"a3_characters_f",
+		"A3_Soft_F_Gamma_Offroad",
+		"a3_soft_f_offroad_01",
+		"A3_Soft_F_Quadbike",
+		"A3_Soft_F_Gamma_Quadbike",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Soft_F_SUV",
+		"A3_Soft_F_Car",
+		"A3_Soft_F_Truck",
+		"A3_Soft_F_TruckHeavy",
+		"A3_Armor_F_Slammer"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_INDEP",
+		"a3_characters_f",
+		"A3_Soft_F_Quadbike",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Soft_F_Gamma_Quadbike",
+		"A3_Soft_F_SUV",
+		"A3_Soft_F_Car",
+		"A3_Soft_F_Gamma_Offroad",
+		"a3_soft_f_offroad_01",
+		"A3_Soft_F_Truck",
+		"A3_Soft_F_TruckHeavy",
+		"A3_Armor_F_Slammer",
+		"a3_map_altis"
+	};
+	randomSeed=8076015;
+	class Intel
+	{
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=19;
+		minute=10;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11506.121,23.242998,11612.381};
+					azimut=264.79099;
+					id=0;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					init="this allowDamage false;";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=15;
+		class Item0
+		{
+			position[]={11697.19,0.699956,11457.581};
+			azimut=105.507;
+			id=1;
+			side="EMPTY";
+			vehicle="B_Quadbike_01_F";
+			skill=0.60000002;
+			init="this addAction [""Boot anschnallen"", ""quad\amphibie.sqf""];";
+		};
+		class Item1
+		{
+			position[]={11692.366,1.8557593,11463.871};
+			azimut=105.507;
+			id=2;
+			side="EMPTY";
+			vehicle="Box_NATO_Support_F";
+			skill=0.60000002;
+			init="clearItemCargoGlobal this; clearWeaponCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""FirstAidKit"",10]; this addItemCargoGlobal [""MediKit"",1]; this addAction [""Heilen"",""quad\Sanibox.sqf""];";
+		};
+		class Item2
+		{
+			position[]={11695.118,1.3237841,11463.156};
+			id=3;
+			side="EMPTY";
+			vehicle="B_G_Quadbike_01_F";
+			skill=0.60000002;
+			init="this addAction[""Bombe Zünden"",""quad\kamikaze.sqf""]; this addweapon ""Gatling_30mm_Plane_CAS_01_F""; this addMagazine ""1000Rnd_Gatling_30mm_Plane_CAS_01_F"";";
+		};
+		class Item3
+		{
+			position[]={11689.054,4.07548,11483.494};
+			azimut=305;
+			id=4;
+			side="EMPTY";
+			vehicle="C_SUV_01_F";
+			skill=0.60000002;
+			init="this addAction [""Rauchwand"",""SUV\rauch.sqf""]; this addAction [""Panzern"",""SUV\panzer.sqf""]";
+		};
+		class Item4
+		{
+			position[]={11687.354,3.8001416,11481.097};
+			azimut=304.47101;
+			id=5;
+			side="EMPTY";
+			vehicle="C_Hatchback_01_sport_F";
+			skill=0.60000002;
+			init="this addAction [""Nitro"",""limo\nitro.sqf""]; this addAction [""Panzern"", ""limo\panzer.sqf""];";
+		};
+		class Item5
+		{
+			position[]={11684.9,4.2568946,11477.211};
+			azimut=-54.6362;
+			id=6;
+			side="EMPTY";
+			vehicle="B_G_Offroad_01_F";
+			skill=0.60000002;
+			init="this addAction [""Minen legen"", ""offroad\minenleger.sqf""]; this addAction [""Panzern"",""offroad\panzer.sqf""]";
+		};
+		class Item6
+		{
+			position[]={11680,4.5121312,11457.375};
+			azimut=-66.009033;
+			id=7;
+			side="EMPTY";
+			vehicle="C_Van_01_transport_F";
+			skill=0.60000002;
+		};
+		class Item7
+		{
+			position[]={11681.396,4.8197012,11471.714};
+			azimut=-61.966702;
+			id=8;
+			side="EMPTY";
+			vehicle="C_Van_01_box_F";
+			skill=0.60000002;
+			init="this addAction [""Panzern"",""Tbox\panzern.sqf""];";
+		};
+		class Item8
+		{
+			position[]={11679.938,4.8338356,11461.594};
+			azimut=-67.406235;
+			id=9;
+			side="EMPTY";
+			vehicle="B_G_Van_01_transport_F";
+			skill=0.60000002;
+		};
+		class Item9
+		{
+			position[]={11680.3,5.1399059,11467.564};
+			azimut=-69.668251;
+			id=10;
+			side="EMPTY";
+			vehicle="C_Van_01_box_F";
+			skill=0.60000002;
+		};
+		class Item10
+		{
+			position[]={11678.844,4.5076528,11452.839};
+			azimut=-60.711681;
+			id=11;
+			side="EMPTY";
+			vehicle="I_Truck_02_transport_F";
+			skill=0.60000002;
+		};
+		class Item11
+		{
+			position[]={11674.373,3.7644007,11440.826};
+			azimut=-66.508904;
+			id=12;
+			side="EMPTY";
+			vehicle="I_Truck_02_covered_F";
+			skill=0.60000002;
+		};
+		class Item12
+		{
+			position[]={11677.638,4.4065199,11448.974};
+			azimut=-60.711681;
+			id=13;
+			side="EMPTY";
+			vehicle="I_Truck_02_transport_F";
+			skill=0.60000002;
+		};
+		class Item13
+		{
+			position[]={11675.836,4.3064003,11445.05};
+			azimut=-66.508904;
+			id=14;
+			side="EMPTY";
+			vehicle="I_Truck_02_covered_F";
+			skill=0.60000002;
+		};
+		class Item14
+		{
+			position[]={11367.533,22.495832,11441.31};
+			azimut=389.05643;
+			id=15;
+			side="EMPTY";
+			vehicle="B_MBT_01_cannon_F";
+			skill=0.60000002;
+		};
+	};
+	class Markers
+	{
+		items=1;
+		class Item0
+		{
+			position[]={11483.869,23.375109,11606.911};
+			name="asf";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBrown";
+			fillName="BDiagonal";
+			a=20;
+			b=20;
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=15743057;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=3494197;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=1204936;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

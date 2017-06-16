@@ -1,0 +1,32 @@
+			_Mast removeAction _idcon;
+			_Mast addAction ["<t color='#FF9100'>Establish Base",{
+			//--------------------------------------------------------------------------------------------------------------------------------------------------			
+				_id = _this select 2;
+				_Mast = _this select 3;
+				if (!Basealive) then 
+				{
+				Basealive = true;
+				[west, _Mast] call BIS_fnc_addRespawnPosition;
+				LagerBasemaxres = 3000;
+				publicVariable "LagerBasemaxres";
+				LagerBasemaxmuni = 700;
+				publicVariable "LagerBasemaxmuni";
+				Lager_DORF addAction ["<t color = '#EDCF24'> Store RESOURCES","Base\Lager.sqf", [0,Hilfe_DORF]];
+				Lager_DORF addAction ["<t color = '#EDCF24'> Get RESOURCES","Base\Lager.sqf", [1,Hilfe_DORF]];
+				Lager_DORF addAction ["<t color = '#EDCF24'> Store AMMO","Base\Lager.sqf", [2,Hilfe_DORF]];
+				Lager_DORF addAction ["<t color = '#EDCF24'> Get AMMO","Base\Lager.sqf", [3,Hilfe_DORF]];
+				Lager_DORF addAction ["<t color = '#EDCF24'> Build a storage box","Base\Lager.sqf", [10,Hilfe_DORF]];
+				Lager_DORF addAction ["<t color = '#77C3E0'> Upgrade storage to stage 2 [1500 Res]","Base\Lager.sqf", [4]];
+				
+				_Mast addAction ["<t color = '#FF9100'> Show Resources","Base\Resourcen.sqf"];
+				_Mast addAction ["<t color = '#77C3E0'> Build Workshop [800 Res]","Base\upgrades.sqf",[0,Hilfe_DORF_Werkstatt]];
+				_Mast addAction ["<t color = '#77C3E0'> Build MASH [600 Res]","Base\upgrades.sqf",[1,Hilfe_DORF_Lazarett]];
+				_Mast addAction ["<t color = '#77C3E0'> Build Resupply-point [300 Res]","Base\upgrades.sqf",[2,Hilfe_DORF_Versorgung]];
+				_Mast removeAction _id;
+				}
+				else {hint "You already have a Base!";};
+				},_Mast]
+			//-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+einfach alles einfügen und DORF mit Ortsnamen Ersetzen

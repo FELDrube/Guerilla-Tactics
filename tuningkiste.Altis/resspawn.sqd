@@ -1,0 +1,5 @@
+while {true} do 
+{
+_resPak = "Land_Bricks_V1_F" createVehicle position asf;
+sleep 10;
+};

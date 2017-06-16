@@ -1,0 +1,13 @@
+_Group = CreateGroup West;
+_flug = createVehicle ["C_Plane_Civil_01_F", [(getMarkerPos "flugspawn") select 0,(getMarkerPos "flugspawn") select 1,100], [], 0, "FLY"];
+_Pilot = _Group createUnit ["C_man_pilot_F", [0,0,1], [], 0, "CAN_COLLIDE"];
+_Pilot moveInDriver _flug;
+_wp1 = _Group addWaypoint [(getmarkerpos "flugziel"), 0];
+[_Group, 0] setWaypointCompletionRadius 100;
+//_wp1 setWaypointStatements ["true", "[_flug] execVM 'vehicles\flugzeug\rauch.sqf'"];
+_wp1 setWaypointSpeed "NORMAL";
+_wp1 setWaypointType "SAD";
+_wp2 = _Group addWaypoint [(getmarkerpos "flugende"), 0];
+_wp1 setWaypointStatements ["true", "[_flug] execVM 'Server\fahrloesch.sqf'"];
+_wp2 setWaypointSpeed "NORMAL";
+_wp2 setWaypointType "SAD";

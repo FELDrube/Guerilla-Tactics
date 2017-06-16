@@ -1,0 +1,28 @@
+class Guerillatacktics
+{
+	overviewText = "Join the Resistance and free Everon from the invading CSAT-forces!";
+	overviewPicture = "overviewPicture_ca.paa";
+	loadScreen = "overviewPicture_ca.paa";
+	onLoadMission = "CSAT has Conquered Everon, your home. Go and Capture the Island!"; // Description
+	author = "FELDruebe";
+	class Header
+	{
+	gameType = Coop; // MP mission type
+	};
+
+};
+
+
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "You successfully freed Everon from CSAT oppression.";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
