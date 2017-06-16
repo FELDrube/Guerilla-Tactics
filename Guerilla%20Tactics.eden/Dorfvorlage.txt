@@ -1,0 +1,40 @@
+			KleineSiedlungen = KleineSiedlungen + 1;
+			DORFBefreit = true;
+			publicVariable "DORFBefreit";
+			publicVariable "KleineSiedlungen";
+			"marker_DORF" setMarkerColor "ColorGUER";
+			["DACDORF"] call DAC_fDeleteZone;									//... entferne dessen DAC zone
+			_Mast setFlagTexture "\A3\Data_F\Flags\Flag_FIA_CO.paa";		//... Hisse die Flagge der Revolution
+			["erobern",["DORF was captured","PLAIN DOWN",2]] remoteExec ["cutText"];									//... und gib eine nachricht aus
+			[_Mast, _idcon] remoteExec ["removeAction",0,true]; 
+			[_Mast,["<t color='#FF9100'>Establish Base",{
+			//--------------------------------------------------------------------------------------------------------------------------------------------------			
+				_id = _this select 2;
+				_Mast = _this select 3;
+				if (!Basealive) then 
+				{
+				Basealive = true;
+				publicVariable "Basealive";
+				Base = "DORF";
+				publicVariable "Base";
+				[west, _Mast] call BIS_fnc_addRespawnPosition;
+				LagerBasemaxres = 3000;
+				publicVariable "LagerBasemaxres";
+				LagerBasemaxmuni = 700;
+				publicVariable "LagerBasemaxmuni";
+				[Lager_DORF,["<t color = '#EDCF24'> Store RESOURCES","Base\Lager.sqf", [0,Hilfe_DORF]]] remoteExec ["addAction",0,true];
+				[Lager_DORF,["<t color = '#EDCF24'> Get RESOURCES","Base\Lager.sqf", [1,Hilfe_DORF]]] remoteExec ["addAction",0,true];
+				[Lager_DORF,["<t color = '#EDCF24'> Store AMMO","Base\Lager.sqf", [2,Hilfe_DORF]]] remoteExec ["addAction",0,true];
+				[Lager_DORF,["<t color = '#EDCF24'> Get AMMO","Base\Lager.sqf", [3,Hilfe_DORF]]] remoteExec ["addAction",0,true];
+				[Lager_DORF,["<t color = '#EDCF24'> Build a storage box","Base\Lager.sqf", [10,Hilfe_DORF]]] remoteExec ["addAction",0,true];
+				[Lager_DORF,["<t color = '#77C3E0'> Upgrade storage to stage 2 [1500 Res]","Base\Lager.sqf", [4]]] remoteExec ["addAction",0,true];
+				
+				[_Mast,["<t color = '#FF9100'> Show Resources","Base\Resourcen.sqf"]] remoteExec ["addAction",0,true];
+				[_Mast,["<t color = '#77C3E0'> Build Workshop [800 Res]","Base\upgrades.sqf",[0,Hilfe_DORF_Werkstatt]] remoteExec ["addAction",0,true];
+				[_Mast,["<t color = '#77C3E0'> Build MASH [600 Res]","Base\upgrades.sqf",[1,Hilfe_DORF_Lazarett]] remoteExec ["addAction",0,true];
+				[_Mast,["<t color = '#77C3E0'> Build Resupply-point [300 Res]","Base\upgrades.sqf",[2,Hilfe_DORF_Versorgung]] remoteExec ["addAction",0,true];
+				
+				[_Mast,_id] remoteExec ["removeAction",0,true];
+				}
+				else {hint "You already have a Base!";};
+				},_Mast]] remoteExec ["addAction",0,true]; 

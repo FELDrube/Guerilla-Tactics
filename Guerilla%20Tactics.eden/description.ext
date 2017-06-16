@@ -1,0 +1,43 @@
+// Respawn type, see the table below
+respawn = 3;
+// Delay in seconds before playable unit respawns.
+respawnDelay = 10;
+// 0 to disable the score table (it can still be opened manually by pressing 'P' key).
+respawnDialog = 0;
+// Side specific respawn templates. When undefined, general respawnTemplates are used instead.
+respawnTemplatesWest[] = {"MenuPosition"};
+// 1 to respawn player when he joins the game. Available only for INSTANT and BASE respawn types.
+respawnOnStart = 0;
+
+
+
+
+
+displayName = "Guerilla Tactics";
+overviewText = "Join the Resistance and free Everon from the invading CSAT-forces!";
+overviewPicture = "overviewPicture_ca.paa";
+loadScreen = "overviewPicture_ca.paa";
+onLoadMission = "CSAT has Conquered Everon, your home. Go and Capture the Island!"; // Description
+author = "FELDruebe";
+class Header
+{
+	gameType = Coop; // MP mission type
+	minPlayers = 1;
+};
+
+
+
+
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "You successfully freed Everon from CSAT oppression.";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+};
