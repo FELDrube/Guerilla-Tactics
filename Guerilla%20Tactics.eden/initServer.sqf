@@ -30,8 +30,8 @@ TyroneBefreit = false;
 
 while {true} do 
 {
-	
-	if (Basealive) then 
+	_spieler = playersNumber west;
+	if ((Basealive) && (_spieler > 0)) then 
 		{
 		_Ressourcen = ResVert select 0;
 		_Muni = MuniVert select 0;
@@ -56,5 +56,10 @@ while {true} do
 	if ((ChotainBefreit) AND (DurrasBefreit) AND(EntreDeuxBefreit) AND(GravetteBefreit) AND(FlughafenBefreit) AND (FigariBefreit) AND (LamentinBefreit) AND(LeMouleBefreit) AND(LarunsBefreit) AND(LevieBefreit) AND (MBasisBefreit) AND (MBasis2Befreit) AND(MeauxBefreit) AND(MortonBefreit) AND (MontignacBefreit) AND (ProvinsBefreit) AND(ReginaBefreit) AND (SaintPhillipeBefreit) AND (SaintPierreBefreit) AND (VernonBefreit) AND (TyroneBefreit)) then {"end1" call BIS_fnc_endMission;};
 	sleep 300;
 	
-	if (daytime == 20.00) then {skipTime 8}; 
+	if (daytime >= 20.00) then {skipTime 8};
+	if (_spieler == 0) then {
+		while {_spieler == 0} do {
+		sleep 450;
+		};
+	};
 };
